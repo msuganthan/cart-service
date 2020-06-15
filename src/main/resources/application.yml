@@ -1,0 +1,25 @@
+server:
+  port: 8081
+
+cart:
+  api-prefix: /api/cart
+
+shopping-cart:
+  queue:
+    name: product-queue
+
+# For in-memory storage
+#spring.datasource.url=jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1;IGNORECASE=TRUE;
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+    driverClassName: org.h2.Driver
+    username: admin
+    password: admin
+    platform: h2
+  h2:
+    console.enabled: true
+    console.path: /h2
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: true
